@@ -35,14 +35,14 @@
 ### Association
 
 - belongs_to :user
-- has_many :orders
+- belongs_to :order
 
 ## orders テーブル
 
 | Column    | Type       | Options                        |
 | --------- | ---------- | ------------------------------ |
 | user      | references | null: false, foreign_key: true |           |
-| item_id   | references | null: false, foreign_key: true |
+| item      | references | null: false, foreign_key: true |
 
 ### Association
 
