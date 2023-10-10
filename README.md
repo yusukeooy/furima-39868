@@ -34,8 +34,8 @@
 
 ### Association
 
-- belongs_to :user
-- belongs_to :order
+- has_one :user
+- has_one :order
 
 ## orders テーブル
 
