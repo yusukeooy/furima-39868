@@ -1,7 +1,7 @@
 class CreateShippingAddresses < ActiveRecord::Migration[7.0]
   def change
     create_table :shipping_addresses do |t|
-        t.string        :portal_code,         null: false, format: { with: /\A\d{3}-\d{4}\z/ }
+        t.string        :portal_code,         null: false
         t.integer       :prefecture_id,       null: false
         t.string        :city,                null: false
         t.string        :address,             null: false
