@@ -23,7 +23,7 @@ class ItemsController < ApplicationController
   end
   
   def edit
-    unless current_user.id == @item.user_id
+    return unless (current_user.id == @item.user_id) || @item.order.present?
       redirect_to action: :index
     end
   end
@@ -54,4 +54,3 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:item_name,:item_info,:category_id,:sales_status_id,:shipping_fee_status_id,:prefecture_id,:scheduled_delivery_id,:price,:image).merge(user_id: current_user.id)
   end
-end
